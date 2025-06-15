@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAZIONIX - Complete Amazon Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #007C79;
+    color: #FFFFFF;
+    min-height: 100vh;
+    line-height: 1.6;
+    padding-top: 70px;
+    margin: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255,1.02);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    padding: 8px 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    position: relative;
+    top: 7px;
+    height: 60px;
+    width: auto;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.navbar.scrolled .nav-logo {
+    color: #007C79;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s;
+    position: relative;
+}
+.nav-link.scrolled{
+    color: #333333;
+}
+.nav-link.scrolled:active{
+    color: #F46F25;
+}
+
+.nav-link:hover {
+    color: #F46F25;
+}
+
+.nav-link.active {
+    color: #F46F25;
+    font-weight: 600;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #F46F25;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.navbar.scrolled .mobile-menu-btn {
+    color: #333333;
+}
+
+/* Navbar CTA Button */
+.nav-cta {
+    background: transparent;
+    color: #FFFFFF;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    border: 2px solid #F46F25;
+    display: inline-block;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.navbar.scrolled .nav-cta {
+    color: #F46F25;
+    border-color: #007C79;
+}
+
+.nav-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #F46F25, #004D47);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.nav-cta:hover {
+    color: #FFFFFF;
+    transform: translateX(3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.nav-cta:hover::before {
+    left: 0;
+}
+
+.navbar.scrolled .nav-cta::before {
+    background: linear-gradient(45deg, #007C79, #D45B1F);
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Services Hero Section */
+.services-hero {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.services-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #F46F25;
+    line-height: 1.2;
+}
+
+.services-hero p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Services Categories */
+.services-categories {
+    margin: 60px 0;
+}
+
+.category-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.category-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #F46F25, transparent);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.service-card {
+    background: rgba(0, 59, 54, 0.5);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+.service-card:hover {
+    transform: translateX(10px); /* changed from translateY(-10px) */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    background: rgba(0, 59, 54, 0.5);
+    border-color: #F46F25;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #F46F25;
+    display: flex;
+    align-items: center;
+}
+
+.service-card h3::before {
+    content: '✓';
+    margin-right: 10px;
+    color: #F46F25;
+    font-weight: bold;
+}
+
+.service-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(244, 111, 37, 0.3);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-image {
+    border-color: #F46F25;
+    transform: scale(1.02);
+}
+
+.image-placeholder {
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+}
+
+/* CTA Section */
+.services-cta {
+    text-align: center;
+    margin: 80px 0;
+    padding: 60px 0;
+    background: rgba(0, 59, 54, 0.3);
+    border-radius: 20px;
+}
+
+.services-cta h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.services-cta p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-button {
+    background: transparent;
+    color: #FFFFFF;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    border: 2px solid #F46F25;
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #D45B1F,#007C79);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.cta-button:hover {
+    color: #FFFFFF;
+    transform: translateX(3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.navbar-container:active{
+    color: #F46F25;
+}
+.cta-button:hover::before {
+    left: 0;
+}
+
+/* Footer */
+.footer-section {
+    width: 100%;
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    background: linear-gradient(45deg, #007C79, #D45B1F);
+    padding: 60px 20px 30px 20px;
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 60px;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer-column h3 {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 18px;
+}
+
+.footer-column p {
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #F46F25;
+}
+
+
+        .footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    color: #ffffff;
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.2);
+}
+
+/* Brand hover colors */
+.footer-social a.facebook:hover {
+    color: #1877f2; /* Facebook Blue */
+}
+
+.footer-social a.x:hover {
+    color: #000000; /* X (Twitter Black) */
+}
+
+.footer-social a.instagram:hover {
+    color: #e1306c; /* Instagram Pinkish */
+}
+
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0 0 0;
+    font-size: 13px;
+    color: #ffffff;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* On hover: CTA text stays white even when navbar is scrolled */
+.navbar.scrolled .nav-cta:hover {
+    color: #FFFFFF;
+}
+
+/* Active nav-link color: orange */
+.nav-link.active {
+    color: #F46F25 !important;
+}
+
+/* Active nav-link on scrolled navbar */
+.navbar.scrolled .nav-link.active {
+    color: #F46F25 !important;
+}
+.navbar.scrolled .nav-link {
+    color: #333333;
+}
+.navbar.scrolled .nav-logo {
+    color: #007C79;
+}
+.navbar.scrolled .mobile-menu-btn {
+    color: #333333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Mobile Navbar Styles */
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+        transition: all 0.5s ease;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 8px 0;
+    }
+
+    .nav-link {
+        color: #F46F25;
+        font-size: 16px;
+    }
+
+    .navbar.scrolled .nav-menu {
+        top: 55px;
+    }
+
+    .services-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 30px;
+    }
+}
+    </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html">
+      <img src="logo-12.png" alt="TAZIONIX Logo" class="nav-logo" id="navbar-logo">
+    </a>
+
+    <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
+
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a href="services.html" class="nav-link">SERVICES</a>
+      </li>
+      <li class="nav-item">
+        <a href="about.html" class="nav-link">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a href="Contact.html" class="nav-link">CONTACT</a>
+      </li>
+      <li class="nav-item">
+        <a href="mailto:info@tazionix.com?subject=Free%20Consultation%20Request" class="nav-cta">Free Consultation</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="container">
+        <!-- Services Hero Section -->
+        <section class="services-hero">
+            <h1>Complete Amazon Seller Services</h1>
+            <p>From product research to brand management, we provide end-to-end solutions to help your Amazon business thrive</p>
+        </section>
+
+        <!-- Product Research & Sourcing -->
+        <section class="services-categories">
+            <h2 class="category-title">Product Research & Sourcing</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="product-research2.png" alt="Product Research" class="service-image">
+                    <h3>Product Research</h3>
+                    <p>Comprehensive market analysis using tools like Helium 10 and Jungle Scout to identify profitable products with high demand and low competition.</p>
+                </div>
+                <div class="service-card">
+                    <img src="ChatGPT Image Jun 14, 2025, 09_44_26 AM.png" alt="Supplier Sourcing" class="service-image">
+                    <h3>Supplier Sourcing</h3>
+                    <p>Vetted supplier connections from Alibaba and Global Sources with quality assurance checks and negotiation for best pricing.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Listing Management -->
+        <section class="services-categories">
+            <h2 class="category-title">Listing Management</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="listing.png" alt="Listing Creation" class="service-image">
+                    <h3>Listing Creation</h3>
+                    <p>Professional product listings with SEO-optimized titles, bullet points, and descriptions that convert while ranking for key search terms.</p>
+                </div>
+                <div class="service-card">
+                    <img src="listingopt.png" alt="Listing Optimization" class="service-image">
+                    <h3>Listing Optimization</h3>
+                    <p>Continuous A/B testing and refinement of listings with enhanced brand content (EBC/A+) to maximize conversions and visibility.</p>
+                </div>
+                <div class="service-card">
+                    <img src="graphic.png" alt="Graphics Designing" class="service-image">
+                    <h3>Graphics Designing</h3>
+                    <p>Professional product images, infographics, and lifestyle photos that highlight features while meeting Amazon's requirements.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advertising & Marketing -->
+        <section class="services-categories">
+            <h2 class="category-title">Advertising & Marketing</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="keyword.png" alt="Keyword Research" class="service-image">
+                    <h3>Keyword Research</h3>
+                    <p>Identification of high-converting, low-competition keywords using advanced tools to target the right audience.</p>
+                </div>
+                <div class="service-card">
+                    <img src="PPC.png" alt="PPC Campaign Management" class="service-image">
+                    <h3>PPC Campaign Management</h3>
+                    <p>Daily optimization of Sponsored Products, Sponsored Brands, and DSP campaigns to maximize ROAS and scale profitable campaigns.</p>
+                </div>
+                <div class="service-card">
+                    <img src="PL.png" alt="Product Launching" class="service-image">
+                    <h3>Product Launching</h3>
+                    <p>Proven launch strategies combining PPC, external traffic, and promotions to quickly rank new products.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operations & Support -->
+        <section class="services-categories">
+            <h2 class="category-title">Operations & Support</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="IM.png" alt="Inventory Management" class="service-image">
+                    <h3>Inventory Management</h3>
+                    <p>Demand forecasting and inventory planning to prevent stockouts (which hurt rankings) and minimize storage fees.</p>
+                </div>
+                <div class="service-card">
+                    <img src="OP.png" alt="Order Processing" class="service-image">
+                    <h3>Order Processing</h3>
+                    <p>Fulfillment coordination, shipment tracking, and customer communication for smooth operations.</p>
+                </div>
+                <div class="service-card">
+                    <img src="cs.png" alt="Customer Service" class="service-image">
+                    <h3>Customer Service</h3>
+                    <p>Professional handling of inquiries, returns, and issues to maintain seller metrics and brand reputation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Account Management -->
+        <section class="services-categories">
+            <h2 class="category-title">Account Management</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="AHM.png" alt="Account Health Monitoring" class="service-image">
+                    <h3>Account Health Monitoring</h3>
+                    <p>Proactive monitoring of metrics (ODR, late shipments) to prevent selling privilege impacts.</p>
+                </div>
+                <div class="service-card">
+                    <img src="RM.png" alt="Review Management" class="service-image">
+                    <h3>Review Management</h3>
+                    <p>Ethical review generation strategies with automated follow-up systems that comply with Amazon policies.</p>
+                </div>
+                <div class="service-card">
+                    <img src="SIR.png" alt="Sales Reporting" class="service-image">
+                    <h3>Sales & Inventory Reporting</h3>
+                    <p>Custom dashboards and weekly reports showing key metrics, trends, and actionable insights.</p>
+                </div>
+                <div class="service-card">
+                    <img src="RSC.png" alt="Reimbursement Cases" class="service-image">
+                    <h3>Reimbursement Cases Handling</h3>
+                    <p>Recovery of funds for lost/damaged inventory and incorrect fees through automated systems and manual audits.</p>
+                </div>
+                <div class="service-card">
+                    <img src="BRS1.png" alt="Brand Registry" class="service-image">
+                    <h3>Brand Registry Support</h3>
+                    <p>Enrollment assistance and ongoing brand protection to leverage Amazon's brand-specific features.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="services-cta">
+            <h2>Ready to Scale Your Amazon Business?</h2>
+            <p>Our full-service solutions handle every aspect of your Amazon operations so you can focus on growth.</p>
+            <a href="#" class="cta-button">Get Started Today</a>
+        </section>
+    </div>
+    
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>We provide comprehensive Amazon management services to help brands maximize their potential on the world's largest marketplace.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Amazon Advertising</a></li>
+                    <li><a href="#">Product Research</a></li>
+                    <li><a href="#">Account Management</a></li>
+                    <li><a href="#">Full-Service Solutions</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: info@tazionix.com</p>
+                <p>Phone: +1 (770) 877-4828</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="X" class="x"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 TAZIONIX. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+// ===== Logo Scroll Effect =====
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  const logo = document.getElementById('navbar-logo');
+
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+    logo.src = 'logo-2.png'; // Update this with your "on-scroll" logo
+  } else {
+    navbar.classList.remove('scrolled');
+    logo.src = 'logo-12.png'; // Default logo
+  }
+});
+
+// ===== Mobile Menu Toggle =====
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navMenu = document.querySelector('.nav-menu');
+
+mobileMenuBtn.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+
+// ===== Close Mobile Menu on Link Click =====
+document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+  });
+});
+
+// ===== Animate Services Cards on Scroll =====
+const serviceCards = document.querySelectorAll('.service-card');
+
+const revealOnScroll = () => {
+  const triggerBottom = window.innerHeight * 0.9;
+
+  serviceCards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    if (cardTop < triggerBottom) {
+      card.classList.add('visible');
+    } else {
+      card.classList.remove('visible');
+    }
+  });
+};
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
+
+</body>
+</html>

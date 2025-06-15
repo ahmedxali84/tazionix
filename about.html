@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About TAZIONIX - Premium Amazon Growth Partners</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+    <style>
+        :root {
+            --primary: #007C79;
+            --secondary: #D45B1F;
+            --accent: #F46F25;
+            --dark: #003B36;
+            --light: #FFFFFF;
+            --gray: #F5F7FA;
+            --text: #333333;
+            --text-light: rgba(255, 255, 255, 0.9);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @font-face {
+            font-family: 'Poppins';
+            src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        }
+        
+        body {
+            background: #007C79;
+            color: var(--light);
+            min-height: 100vh;
+            line-height: 1.7;
+            overflow-x: hidden;
+            padding-top: 70px;
+        }
+        
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            background: transparent;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 8px 0;
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+.nav-logo {
+    position: relative;
+    top: 7px;
+    height: 60px;
+    width: auto;
+    transition: opacity 0.3s ease-in-out;
+
+}
+
+        
+        .navbar.scrolled .nav-logo {
+            color: var(--primary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .navbar.scrolled .nav-link {
+            color: var(--text);
+        }
+        
+        .nav-link:hover {
+            color: var(--accent);
+        }
+        
+        .nav-link.active {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 22px;
+            cursor: pointer;
+        }
+        
+        .navbar.scrolled .mobile-menu-btn {
+            color: var(--text);
+        }
+        
+        .nav-cta {
+            background: transparent;
+            color: var(--light);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.5s ease;
+            border: 2px solid var(--accent);
+            display: inline-block;
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .navbar.scrolled .nav-cta {
+            color: var(--accent);
+            border-color: var(--primary);
+        }
+        
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--dark), var(--primary));
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+        
+        .nav-cta:hover {
+            color: var(--light);
+            transform: translateY(3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 1.02);
+        }
+        
+        .nav-cta:hover::before {
+            left: 0;
+        }
+        
+        .navbar.scrolled .nav-cta::before {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            text-align: center;
+            padding: 80px 0 60px;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+            line-height: 1.2;
+        }
+        
+        .about-hero p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+    flex-wrap: nowrap; /* prevent wrapping */
+    }
+
+        
+        .stat-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border-radius: 15px;
+            padding: 25px 35px;
+            min-width: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+        
+        /* About Sections */
+        .about-section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        /* Our Story */
+        .our-story {
+            background-color: rgba(0, 59, 54, 0.3);
+        }
+        
+        .story-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .story-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .story-content {
+            flex: 1;
+            color: var(--text-light);
+        }
+        
+        .story-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .story-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .timeline {
+            margin-top: 30px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+        
+        .timeline-year {
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .timeline-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+        
+        .timeline-content p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        /* Our Approach */
+        .our-approach {
+            background-color: rgba(212, 91, 31, 0.2);
+        }
+        
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .approach-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .approach-card:hover {
+            transform: translateY(-10px);
+            background: rgba(0, 59, 54, 0.3);
+        }
+        
+        .approach-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .approach-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .approach-card p {
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+        
+        /* Our Services */
+        .our-services {
+            background-color: rgba(0, 123, 121, 0.3);
+        }
+        
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .service-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .service-tab {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--light);
+        }
+        
+        .service-tab:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+        
+        .service-tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .service-content {
+            display: none;
+        }
+        
+        .service-content.active {
+            display: block;
+        }
+        
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-feature {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(8px);
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .service-feature:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 59, 54, 0.3);
+        }
+        
+        .service-feature h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .service-feature h4 i {
+            color: var(--accent);
+        }
+        
+        .service-feature p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+        
+        /* Team Section */
+        .our-team {
+            background-color: rgba(212, 91, 31, 0.2);
+        }
+        
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .team-member {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
+        }
+        
+        .member-info {
+            padding: 20px;
+            color: var(--light);
+        }
+        
+        .member-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .member-info p {
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+        
+        .member-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .member-social a {
+            color: var(--light);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .member-social a:hover {
+            background: var(--accent);
+        }
+        
+        /* CTA Section */
+        .about-cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(0, 124, 121, 0.9) 0%, rgba(0, 59, 54, 0.95) 100%);
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .about-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .about-cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+        
+        .cta-button {
+            background: transparent;
+            color: var(--light);
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            border: 2px solid var(--accent);
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--accent), var(--secondary));
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover {
+            color: var(--light);
+            transform: translateY(3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover::before {
+            left: 0;
+        }
+        
+       /* Footer */
+.footer-section {
+    width: 100%;
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 60px 20px 30px 20px;
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 60px;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer-column h3 {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 18px;
+}
+
+.footer-column p {
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #F46F25;
+}
+
+
+        .footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    color: #ffffff;
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.2);
+}
+
+/* Brand hover colors */
+.footer-social a.facebook:hover {
+    color: #1877f2; /* Facebook Blue */
+}
+
+.footer-social a.x:hover {
+    color: #000000; /* X (Twitter Black) */
+}
+
+.footer-social a.instagram:hover {
+    color: #e1306c; /* Instagram Pinkish */
+}
+
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0 0 0;
+    font-size: 13px;
+    color: #ffffff;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .story-container {
+                flex-direction: column;
+            }
+            
+            .story-image {
+                max-width: 600px;
+                margin: 0 auto 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-container {
+                padding: 0 15px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 30px 30px;
+                transition: all 0.5s ease;
+            }
+        
+            .nav-menu.active {
+                right: 0;
+            }
+        
+            .nav-item {
+                width: 100%;
+            }
+        
+            .nav-link {
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                color: var(--text);
+            }
+        
+            .nav-cta {
+                margin-top: 20px;
+                width: 100%;
+                text-align: center;
+            }
+        
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+        
+            .hero-stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        
+            .story-container,
+            .approach-grid,
+            .services-container,
+            .team-members {
+                padding: 0 20px;
+            }
+        
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .about-hero p {
+                font-size: 1rem;
+            }
+            
+            .stat-box {
+                min-width: 100%;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .service-tabs {
+                flex-direction: column;
+            }
+        }
+            </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html">
+      <img src="logo-12.png" alt="TAZIONIX Logo" class="nav-logo" id="navbar-logo">
+    </a>
+
+    <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
+
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a href="services.html" class="nav-link">SERVICES</a>
+      </li>
+      <li class="nav-item">
+        <a href="about.html" class="nav-link">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a href="Contact.html" class="nav-link">CONTACT</a>
+      </li>
+      <li class="nav-item">
+        <a href="mailto:info@tazionix.com?subject=Free%20Consultation%20Request" class="nav-cta">Free Consultation</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-content">
+            <h1>Transforming Amazon Brands Through Data & Innovation</h1>
+            <p>We combine cutting-edge technology with proven strategies to help brands thrive in the competitive Amazon marketplace.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Stores Managed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">5M+</div>
+                    <div class="stat-label">Annual Sales Generated</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Employees</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="about-section our-story">
+        <div class="section-title">
+            <h2>Our Story</h2>
+            <p>From humble beginnings to becoming a trusted partner for Amazon brands worldwide</p>
+        </div>
+        
+        <div class="story-container">
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="TAZIONIX Team">
+            </div>
+            
+            <div class="story-content">
+                <h3>Building the Future of Ecommerce</h3>
+                <p>Founded in 2020 by a team of Amazon veterans, TAZIONIX was born from a shared frustration with the lack of transparent, results-driven agencies in the Amazon ecosystem. We set out to create a different kind of partner—one that combines deep marketplace expertise with cutting-edge technology.</p>
+                <p>What began as a small team working with local brands has grown into a full-service Amazon agency serving clients across USA & Europe. Our growth has been fueled by one simple principle: deliver measurable results or don't take the client.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-content">
+                            <h4>Company Founded</h4>
+                            <p>Launched with 2 team members and 10 initial clients</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-content">
+                            <h4>First 100k</h4>
+                            <p>Helped clients generate over 100k in combined monthly sales</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-content">
+                            <h4>First 1M</h4>
+                            <p>EHelped clients generate over 1M in combined monthly sales</p>
+                        </div>
+                    </div>
+                                        <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content">
+                            <h4>Global Expansion</h4>
+                            <p>Expanded services to European and American marketplaces</p>
+                        </div>
+                </div>
+                                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h4>First 5M</h4>
+                            <p>Helped clients generate over 5M in combined monthly sales</p>
+                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section class="about-section our-approach">
+        <div class="section-title">
+            <h2>Our Approach</h2>
+            <p>We don't believe in one-size-fits-all solutions. Every brand gets a customized strategy.</p>
+        </div>
+        
+        <div class="approach-container">
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data-First Strategy</h3>
+                    <p>We make decisions based on hard data, not hunches. Our proprietary analytics platform tracks hundreds of metrics to identify growth opportunities.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-chess-knight"></i>
+                    </div>
+                    <h3>Holistic Optimization</h3>
+                    <p>From listing content to supply chain, we optimize every aspect of your Amazon presence for maximum performance.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Scalable Growth</h3>
+                    <p>We build systems and processes that scale with your business, ensuring consistent results as you grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section class="about-section our-services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Comprehensive solutions tailored to your brand's stage and goals</p>
+        </div>
+        
+        <div class="services-container">
+            <div class="service-tabs">
+                <div class="service-tab active" data-tab="research">Research & Strategy</div>
+                <div class="service-tab" data-tab="listing">Listing Optimization</div>
+                <div class="service-tab" data-tab="advertising">Advertising</div>
+                <div class="service-tab" data-tab="operations">Operations</div>
+            </div>
+            
+            <div class="service-content active" id="research">
+                <div class="service-features">
+                    <div class="service-feature">
+                        <h4><i class="fas fa-search-dollar"></i> Market Analysis</h4>
+                        <p>Comprehensive competitive research to identify profitable opportunities and white space in your category.</p>
+                    </div>
+                    <div class="service-feature">
+                        <h4><i class="fas fa-box-open"></i> Product Research</h4>
+                        <p>Data-driven identification of high-potential products with strong demand and manageable competition.</p>
+                    </div>
+                    <div class="service-feature">
+                        <h4><i class="fas fa-industry"></i> Supplier Vetting</h4>
+                        <p>Rigorous evaluation and negotiation with manufacturers to ensure quality and competitive pricing.</p>
+                    </div>
+                    <div class="service-feature">
+                        <h4><i class="fas fa-chess-board"></i> Launch Strategy</h4>
+                        <p>Customized game plan for successful product introductions with maximum visibility.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-content" id="listing">
+                <div class="service-features">
+                    <div class="service-feature">
+                        <h4><i class="fas fa-key"></i> Keyword Research</h4>
+                        <p>Identification of high-converting search terms to target in your listing content.</p>
+                    </div>
+                    <div class="service-feature">
+                        <h4><i class="fas fa-pen-fancy"></i> Content Creation</h4>
+                        <p>Compelling, conversion-optimized titles, bullet points, and descriptions.</p>
+                    </div>
+                    <div class="service-feature">
+                        <h4><i class="fas fa-images"></i> Visual Optimization</h4>
+                        <p>Professional product photography and infographics that highlight key features.</p>
+                    </div>
+                    <div class="service-feature">
+                        <h4><i class="fas fa-star"></i> Enhanced Brand Content</h4>
+                        <p>Custom A+ content that tells your brand story and differentiates from competitors.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-content" id="advertising">
+                <div class="service-features">
+                    <div class="service-feature">
+                        <h4><i class="fas fa-bullseye"></i> PPC Management</h4>
+                        <p>Daily optimization of Sponsored Products, Brands, and Display campaigns.</p>
+                    </div>
+                    <div class="service-feature">
+                        <h4><i class="fas fa-funnel-dollar"></i> DSP Advertising</h4>
+                        <p>Programmatic display ads targeting shoppers on and off Amazon.</p>
+                    </div>
+                    <div class="service-feature">
+                        <h4><i class="fas fa-chart-pie"></i> Campaign Strategy</h4>
+                        <p>Custom advertising approaches tailored to your products and goals.</p>
+                    </div>
+                    <div class="service-feature">
+                        <h4><i class="fas fa-search-dollar"></i> Keyword Harvesting</h4>
+                        <p>Systematic identification and targeting of profitable search terms.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-content" id="operations">
+                <div class="service-features">
+                    <div class="service-feature">
+                        <h4><i class="fas fa-warehouse"></i> Inventory Planning</h4>
+                        <p>Demand forecasting to prevent stockouts and minimize storage fees.</p>
+                    </div>
+                    <div class="service-feature">
+                        <h4><i class="fas fa-headset"></i> Customer Service</h4>
+                        <p>Professional handling of inquiries and issues to protect your metrics.</p>
+                    </div>
+                    <div class="service-feature">
+                        <h4><i class="fas fa-file-invoice-dollar"></i> Reimbursements</h4>
+                        <p>Recovery of funds for lost/damaged inventory and incorrect fees.</p>
+                    </div>
+                    <div class="service-feature">
+                        <h4><i class="fas fa-shield-alt"></i> Brand Protection</h4>
+                        <p>Monitoring and enforcement against counterfeiters and policy violations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-cta">
+        <div class="cta-bg-pattern"></div>
+        <div class="cta-container">
+            <h2>Ready to Transform Your Amazon Business?</h2>
+            <p>Schedule your free consultation with our Amazon experts today.</p>
+            <a href="#" class="cta-button">Get Started Now</a>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>We provide comprehensive Amazon management services to help brands maximize their potential on the world's largest marketplace.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Amazon Advertising</a></li>
+                    <li><a href="#">Product Research</a></li>
+                    <li><a href="#">Account Management</a></li>
+                    <li><a href="#">Full-Service Solutions</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: info@tazionix.com</p>
+                <p>Phone: +1 (770) 877-4828</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="X" class="x"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 TAZIONIX. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Service Tabs
+        const serviceTabs = document.querySelectorAll('.service-tab');
+        const serviceContents = document.querySelectorAll('.service-content');
+        
+        serviceTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                serviceTabs.forEach(t => t.classList.remove('active'));
+                serviceContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+       // ===== Navbar Scroll Effect (Logo Swap) =====
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  const logo = document.getElementById('navbar-logo');
+
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+    logo.src = 'logo-2.png'; // Replace with your "scrolled" logo
+  } else {
+    navbar.classList.remove('scrolled');
+    logo.src = 'logo-12.png'; // Original logo
+  }
+});
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.approach-card, .service-feature, .team-member');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.approach-card, .service-feature, .team-member').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // CTA button animation
+        const ctaButton = document.querySelector('.cta-button');
+        if(ctaButton) {
+            ctaButton.addEventListener('mouseenter', () => {
+                ctaButton.querySelector('i').style.transform = 'translateX(5px)';
+            });
+            
+            ctaButton.addEventListener('mouseleave', () => {
+                ctaButton.querySelector('i').style.transform = 'translateX(0)';
+            });
+        }
+    </script>
+</body>
+</html>
